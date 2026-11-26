@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
@@ -72,8 +74,10 @@ export default function RootLayout({
       lang="en"
       className={`${instrumentSerif.variable} ${plusJakartaSans.variable} ${geistMono.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#F7F5F0] text-[#171717] antialiased selection:bg-[#5B3CC4] selection:text-white font-sans">
-        {children}
+      <body className="min-h-screen bg-[#FAF9F5] text-[#1A1A18] antialiased selection:bg-[#5B3CC4] selection:text-white font-sans flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
