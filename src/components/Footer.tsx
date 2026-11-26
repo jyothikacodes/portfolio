@@ -1,64 +1,61 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { ArrowUp, Terminal, Sparkles, Heart } from "lucide-react";
-import { PERSONAL_INFO } from "@/data/portfolioData";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 
 export const Footer: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer className="bg-[#171717] text-[#F7F5F0] py-14 border-t border-[#171717]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-neutral-800">
-          {/* Brand Signature with melogo.jpeg */}
-          <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#5B3CC4] bg-[#2A2A2A]">
-              <Image
-                src="/images/melogo.jpeg"
-                alt="Jyothika cartoon signature stamp"
-                fill
-                className="object-cover"
-                sizes="40px"
-              />
-            </div>
-            <div>
-              <span className="font-serif text-xl tracking-tight text-white block">
-                Jyothika A P
-              </span>
-              <span className="text-[11px] font-mono text-[#A78BFA] block">
-                DESIGNED &amp; BUILT BY JYOTHIKA · IIIT KOTTAYAM
-              </span>
-            </div>
+    <footer className="border-t border-[#E6E4DD] bg-[#FAF9F5] py-14 mt-auto">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-[#5F5E5A]">
+        {/* Left: Identity */}
+        <div className="flex items-center gap-3">
+          <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#D8D5CB] bg-white">
+            <Image
+              src="/images/melogo.jpeg"
+              alt="Jyothika cartoon stamp"
+              fill
+              className="object-cover"
+              sizes="32px"
+            />
           </div>
-
-          {/* Back to Top */}
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-white transition-colors cursor-pointer group"
-          >
-            <span>RETURN TO TOP</span>
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-1 transition-transform" />
-          </button>
+          <span className="font-sans text-xs">
+            Crafted by <strong className="font-medium text-[#1A1A18]">Jyothika A P</strong> · IIIT Kottayam, Kerala
+          </span>
         </div>
 
-        {/* Technical Provenance Note */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-neutral-400">
-          <div className="space-y-1">
-            <p className="text-neutral-300">
-              EDITORIAL MAGAZINE × ENGINEER&apos;S FIELD NOTEBOOK × RESEARCH LAB
-            </p>
-            <p className="text-[11px] text-neutral-500">
-              NEXT.JS 16 · REACT 19 · TYPESCRIPT · TAILWIND CSS 4 · ZERO LOREM IPSUM · 100% VERIFIED EVIDENCE
-            </p>
-          </div>
-
-          <div className="text-[11px] text-neutral-500">
-            &copy; 2026 Jyothika A P. All rights reserved.
-          </div>
+        {/* Center / Right Links */}
+        <div className="flex items-center gap-6 text-xs">
+          <a
+            href="https://github.com/jyothikacodes"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 hover:text-[#1A1A18] transition-colors"
+          >
+            <GithubIcon className="w-3.5 h-3.5" />
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jyothikapratheep/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 hover:text-[#1A1A18] transition-colors"
+          >
+            <LinkedinIcon className="w-3.5 h-3.5 text-[#5B3CC4]" />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="mailto:jyothikapratheep@gmail.com"
+            className="hover:text-[#1A1A18] transition-colors"
+          >
+            Email
+          </a>
+          <Link
+            href="/resume"
+            className="text-[#5B3CC4] hover:underline font-medium"
+          >
+            Resume
+          </Link>
         </div>
       </div>
     </footer>
