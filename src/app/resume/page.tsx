@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-[#171717] py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Navigation back */}
         <div className="flex items-center justify-between pb-6 border-b border-[#E2DDD5]">
